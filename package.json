@@ -1,7 +1,7 @@
 {
   "name": "site",
   "version": "0.1.0",
-  "homepage": "https://a2odysseylabs.github.io/OfficialSite",
+  "homepage": "https://a2odysseylabs.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
