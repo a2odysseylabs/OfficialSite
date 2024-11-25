@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #f1f1f1;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+// Custom styles
+%heading {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.heading-1 {
+  @extend %heading;
+  font-size: 2.25rem; // 36px
+  font-weight: 700;
+  line-height: 2.5rem; // 40px
+}
+
+.heading-2 {
+  @extend %heading;
+  font-size: 1.875rem; // 30px
+  font-weight: 600;
+  line-height: 2.25rem; // 36px
+}
+
+.heading-3 {
+  @extend %heading;
+  font-size: 1.5rem; // 24px
+  font-weight: 500;
+  line-height: 2rem; // 32px
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.25rem; // 20px
+  font-weight: 500;
+  line-height: 1.75rem; // 28px
+}
+
+.heading-5 {
+  @extend %heading;
+  font-size: 1.125rem; // 18px
+  font-weight: 400;
+  line-height: 1.5rem; // 24px
+}
+
+.heading-6 {
+  @extend %heading;
+  font-size: 1rem; // 16px
+  font-weight: 400;
+  line-height: 1.5rem; // 24px
+}
+
+.hero-text {
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: bold;
+  color: theme('colors.amber.600');
+}
+
+
+// Helper styles
+.center-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.card-style {
+  @apply bg-gradient-to-b from-purple-800/10 to-purple-900/40 shadow-3xl p-6 rounded-xl backdrop-blur-sm;
+}
