@@ -1,16 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import classNames from "classnames";
-import { FaBeer } from 'react-icons/fa';
 import {
   useScroll,
   motion,
   useTransform,
 } from 'framer-motion';
 
-import {  ReactComponent as TechBG} from '../assets/tech-icon-bg.svg'; 
+import { ReactComponent as TechBG} from '../assets/tech-icon-bg.svg'; 
+import TechLogoItem from "./TechLogoItem";
 
 const TechStackSection = (props) => {
   const { className, title = "Our Tech Stack" } = props;
+
+  const navigate = useNavigate();
+    
+  const handleContactClick = () => {
+      navigate("/contact");
+  };
 
   const { scrollY } = useScroll();
   const y0 = useTransform(scrollY, [1000, 3000], [-400, 40]);
@@ -22,30 +29,20 @@ const TechStackSection = (props) => {
   const techStack = [
     {
       category: "Design Tools",
-      tools: ["Figma", "Adobe XD", "Sketch", "InVision", "Storybook"],
+      tools: ["figma", "adobe", "sketch", "invision", "storybook", "tailwind"],
     },
     {
       category: "Frontend Development",
-      tools: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Sass"],
+      tools: ["react", "nextjs", "vue", "typescript", "tailwind", "sass"],
     },
     {
       category: "Backend & Database",
-      tools: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Firebase"],
+      tools: ["nodejs", "express", "mongodb", "postgresql", "firebase", "nodejs"],
     },
   ];
 
-  const techItem = (item, icon, y) => (
-    <motion.div className="tech-stack-item center-items relative" style={{ y: y }}>
-      <TechBG className="pr-3" />
-      <div className="flex flex-col items-center absolute-center">
-        {icon}
-        {item}
-      </div>
-    </motion.div>
-  )
-
   return (
-    <section className={classNames(className, "tech-stack-section relative w-full h-[1400px] sm:h-[1000px] py-20")}>
+    <section className={classNames(className, "tech-stack-section relative w-full pt-32 pb-48")}>
       <motion.img
         src={`${process.env.PUBLIC_URL + "/images/tech-gradient.png"}`}
         alt="gradient Layer"
@@ -59,7 +56,7 @@ const TechStackSection = (props) => {
         <motion.img src={`${process.env.PUBLIC_URL + "/images/pattern-dots.png"}`} className="w-[500px] absolute -right-16 bottom-0" alt="" style={{ y: y01 }}/>
 
         {/* Title Row */}
-        <p className="section-title text-right mb-0 leading-none relative z-[1]">Tech Stack</p>
+        <p className="section-title text-right mb-0 relative z-[1]">Tech Stack</p>
         <p className="text-sm text-right mb-8 text-purple-500">* includes, but not limitied to</p>
 
         {/* Tech Stack Columns */}
@@ -76,12 +73,20 @@ const TechStackSection = (props) => {
               <ul className="list-none md:grid md:grid-cols-2">
                 {stack.tools.map((tool, idx) => (
                   <li key={idx} >
-                    {techItem(tool, <FaBeer />)}
+                    <TechLogoItem icon={tool} name={tool} />
                   </li>
                 ))}
               </ul>
             </motion.div>
           ))}
+        </div>
+        <div className="mt-32 text-center">
+          <button 
+            className="px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-lg text-black font-semibold text-lg hover:from-yellow-500 hover:to-orange-400 transition-all relative z-10" 
+            onClick={handleContactClick}
+          >
+            Learn more about our capabilites
+          </button>
         </div>
       </div>
     </section>

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import ProjectCard from "./ProjectCard";
 import {
   useScroll,
@@ -13,25 +15,29 @@ const OurWork = () => {
 
   const projects = [
     {
-      title: "F1nsight",
+      title: "LumTags",
       description: "From wireframes to pixel-perfect mockups and rapid prototyping.",
+      path: "/projects/lumtags",
     },
     {
-      title: "Instant Photo Gallery",
+      title: "F1nsight",
       description: "From wireframes to pixel-perfect mockups and rapid prototyping.",
+      path: "/projects/f1nsight",
     },
     {
       title: "AiPhotoBooth",
       description: "From wireframes to pixel-perfect mockups and rapid prototyping.",
+      path: "/projects/aiphotobooth",
     },
-    {
-      title: "AI Chatbot",
-      description: "From wireframes to pixel-perfect mockups and rapid prototyping.",
-    },
+    // {
+    //   title: "AIChatbot",
+    //   description: "From wireframes to pixel-perfect mockups and rapid prototyping.",
+    //   path: "/aichatbot",
+    // },
   ];
 
   return (
-    <section className="our-work relative w-full h-[1600px] sm:h-[1000px]" id="our-work">
+    <section className="our-work relative w-full pt-24 pb-32" id="our-work">
       <motion.img
         src={`${process.env.PUBLIC_URL + "/images/work-gradient.png"}`}
         alt="gradient Layer"
@@ -48,17 +54,19 @@ const OurWork = () => {
 
         {/* Section Title */}
         <div className="text-right mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-400 mt-10">Our Work</h2>
+          <h2 className="section-title text-orange-400 mt-10">Our Work</h2>
         </div>
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-            />
+            <Link to={project.path} key={index}>
+              <ProjectCard
+                key={index}
+                title={project.title}
+                description={project.description}
+              />
+            </Link>
           ))}
         </div>
       </div>

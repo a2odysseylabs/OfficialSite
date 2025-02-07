@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   useScroll,
   motion,
@@ -10,6 +11,12 @@ const WhyUs = (props) => {
   const { className } = props;
   const { scrollY } = useScroll();
   const y0 = useTransform(scrollY, [2000, 4000], [0, 200]);
+
+  const navigate = useNavigate();
+  
+  const handleContactClick = () => {
+      navigate("/contact");
+  };
 
   const features = [
     {
@@ -35,7 +42,7 @@ const WhyUs = (props) => {
   ];
 
   return (
-    <section className={classNames("why-us relative w-full h-[1200px] sm:h-[1000px] p-4", className)} id="why-A2">
+    <section className={classNames("why-us relative w-full pt-20 pb-40 bg-purple-900", className)} id="why-A2">
       <div className="container mx-auto relative">
 
         <motion.img 
@@ -47,7 +54,7 @@ const WhyUs = (props) => {
 
         {/* Title */}
         <div className="text-left lg:w-3/4 z-[1] relative">
-          <h2 className="text-4xl md:text-5xl font-bold text-orange-400 my-10">
+          <h2 className="section-title text-orange-400 my-10">
             Why Choose A2?
           </h2>
           <p className="mt-4 text-lg md:text-xl mb-8">
@@ -75,7 +82,10 @@ const WhyUs = (props) => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <button className="px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-lg text-black font-semibold text-lg hover:from-yellow-500 hover:to-orange-400 transition-all">
+          <button 
+            className="px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-500 rounded-lg text-black font-semibold text-lg hover:from-yellow-500 hover:to-orange-400 transition-all relative z-10" 
+            onClick={handleContactClick}
+          >
             Get Started Today
           </button>
         </div>

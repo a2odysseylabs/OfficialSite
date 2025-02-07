@@ -56,7 +56,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <p className="text-sm text-purple-700 mt-6">
-            &copy; 2024 A2 Odyssey Labs LLC. All rights reserved.
+            &copy; 2025 A2 Odyssey Labs LLC. All rights reserved.
         </p>
       </div>
     </footer>

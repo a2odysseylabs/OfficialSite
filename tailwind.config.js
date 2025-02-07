@@ -4,6 +4,14 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontSize: {
+      'xs': ['.625rem', '1.25rem'],
+      'sm': ['.75rem', '1.25rem'],
+      'base': ['1rem', '1.25rem'],
+      'lg': ['1.25rem', '1.5rem'],
+      'xl': ['1.5rem', '1.75rem'],
+      '2xl': ['2rem', '2.25rem'],
+    },
     extend: {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'], // Add Poppins font

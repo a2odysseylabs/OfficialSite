@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectCard = ({ title, description }) => {
+const ProjectCard = ({ title, description, onClick }) => {
   return (
     <div className="card-style flex flex-col justify-between">
       {/* Image Placeholder */}
