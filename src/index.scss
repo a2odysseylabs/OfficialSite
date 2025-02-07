@@ -69,7 +69,10 @@ code {
 .hero-text {
   font-size: clamp(2rem, 5vw, 5rem);
   font-weight: bold;
-  line-height: 1;
+  line-height: 1.2;
+  @media (min-width: 768px) {
+    line-height: 1.1;
+  }
 }
 
 .section-title {

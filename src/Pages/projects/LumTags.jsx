@@ -5,7 +5,7 @@ const LumTags = () => {
 
     return (
         <ProjectTemplate
-            title="Lumetry AI Photo Booth"
+            title="LumTags"
             techStack={["react", "nodejs", "express", "mongodb", "nodejs", "aws", "rekognition"]}
             images={[
                 "/images/f1nsight-screenshot1.png",

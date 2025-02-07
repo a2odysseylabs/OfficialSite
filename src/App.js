@@ -1,5 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import Home from "./Pages/Home";
 import ContactUsPage from "./Pages/ContactForm";
@@ -7,6 +10,8 @@ import F1nsight from "./Pages/projects/F1nsight";
 import AiPhotoBooth from "./Pages/projects/AiPhotoBooth";
 import LumTags from "./Pages/projects/LumTags";
 import Header from "./components/Header";
+
+library.add(fas, fab)
 
 function App() {
   return (

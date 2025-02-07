@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Sections */}
-      <HeroSection className="-mt-14" />
+      <HeroSection />
       <ServicesSection />
       <TechStackSection />
       <WhyUs />

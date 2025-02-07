@@ -31,7 +31,7 @@ const HeroSection = (props) => {
   // });
 
   return (
-    <section className={classNames(className, "hero-section relative w-full max-sm:h-screen sm:h-[1000px] px-4")}>
+    <section className={classNames(className, "hero-section relative w-full max-sm:h-[650px] sm:h-[1000px] py-32")}>
       {/* Gradient Layer */}
       <motion.div 
         className="hero-section__layer hero-section__layer--gradient absolute top-0 left-0 w-full h-full]"
@@ -70,9 +70,9 @@ const HeroSection = (props) => {
 
       {/* Text Layer */}
       <div
-        className="hero-section__layer hero-section__layer--text absolute"
+        className="container hero-section__layer hero-section__layer--text px-8 lg:px-32"
       >
-        <div className="lg:w-3/4">
+        <div className="">
           <h1 className="hero-text text-white font-bold mb-4">
             Guiding Digital Journeys with Scalable Design & Cutting-Edge Development Solutions
           </h1>
